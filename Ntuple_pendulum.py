@@ -111,7 +111,7 @@ for i in range(N):
 	dyn_var.append(theta_0[i])
 	dyn_var.append(omega_0[i])
 
-tf = 5 
+tf = 60 
 nfps = 30
 nframes = tf * nfps
 ta = np.linspace(0, tf, nframes)
@@ -213,8 +213,8 @@ def run(frame):
 	ax.set_facecolor('xkcd:black')
 
 ani=animation.FuncAnimation(fig,run,frames=nframes)
-#writervideo = animation.FFMpegWriter(fps=nfps)
-#ani.save('triple_pendulum.mp4', writer=writervideo)
+writervideo = animation.FFMpegWriter(fps=nfps)
+ani.save('triple_pendulum.mp4', writer=writervideo)
 plt.show()
 
 
